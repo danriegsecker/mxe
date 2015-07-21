@@ -587,6 +587,10 @@ USE_OSGPLUGIN(&lt;plugin2&gt;)
         <td></td>
     </tr>
     <tr>
+        <td><a href="http://p7zip.sourceforge.net/">p7zip (7-Zip)</a></td>
+        <td></td>
+    </tr>
+    <tr>
         <td><a href="https://www.gnu.org/software/patch/">Patch</a></td>
         <td></td>
     </tr>
@@ -632,15 +636,22 @@ USE_OSGPLUGIN(&lt;plugin2&gt;)
 
     <!-- http://www.debian.org/distrib/packages#search_packages -->
     <pre>apt-get install \
-    autoconf automake autopoint bash bison bzip2 cmake flex gettext \
-    git g++ gperf intltool libffi-dev libtool libltdl-dev \
-    libssl-dev libxml-parser-perl make openssl patch perl \
-    pkg-config python ruby scons sed unzip wget xz-utils</pre>
+    autoconf automake autopoint bash bison bzip2 cmake flex \
+    gettext git g++ gperf intltool libffi-dev libtool \
+    libltdl-dev libssl-dev libxml-parser-perl make openssl \
+    p7zip-full patch perl pkg-config python ruby scons sed \
+    unzip wget xz-utils</pre>
 
     <p>
     On 64-bit Debian, install also:
     </p>
     <pre>apt-get install g++-multilib libc6-dev-i386</pre>
+    
+    <p>
+    On Debian Jessie (8) or Ubuntu Utopic (14.10) or later,
+    install also:
+    </p>
+    <pre>apt-get install libtool-bin</pre>
 
     <p>
     Only the <a href="https://www.debian.org/releases/stable/">latest Debian stable series</a> is supported.
@@ -652,8 +663,8 @@ USE_OSGPLUGIN(&lt;plugin2&gt;)
     <pre>yum install \
     autoconf automake bash bison bzip2 cmake flex gcc-c++ \
     gettext git gperf intltool make sed libffi-devel \
-    libtool openssl-devel patch perl pkgconfig python \
-    ruby scons unzip wget xz</pre>
+    libtool openssl-devel p7zip patch perl pkgconfig \
+    python ruby scons unzip wget xz</pre>
 
     <p>
     On 64-bit Fedora,
@@ -666,8 +677,8 @@ USE_OSGPLUGIN(&lt;plugin2&gt;)
     <pre>pkg_add -r \
     automake autoconf bash bison cmake coreutils flex \
     gettext git glib20 gmake gperf gsed intltool libffi \
-    libtool openssl patch perl p5-XML-Parser pkgconf \
-    python ruby scons unzip wget</pre>
+    libtool openssl p5-XML-Parser p7zip patch perl \
+    pkgconf python ruby scons unzip wget</pre>
 
     <p>
     Ensure that /usr/local/bin precedes /usr/bin in your $PATH:
@@ -721,10 +732,11 @@ USE_OSGPLUGIN(&lt;plugin2&gt;)
     sys-devel/flex sys-devel/gcc sys-devel/gettext \
     dev-vcs/git dev-util/gperf dev-util/intltool \
     sys-devel/make sys-apps/sed dev-libs/libffi \
-    sys-devel/libtool dev-libs/openssl sys-devel/patch \
-    dev-lang/perl dev-perl/XML-Parser dev-util/pkgconfig \
-    dev-lang/python dev-lang/ruby dev-util/scons \
-    app-arch/unzip net-misc/wget app-arch/xz-utils</pre>
+    sys-devel/libtool dev-libs/openssl app-arch/p7zip \
+    sys-devel/patch dev-lang/perl dev-perl/XML-Parser \
+    dev-util/pkgconfig dev-lang/python dev-lang/ruby \
+    dev-util/scons app-arch/unzip net-misc/wget \
+    app-arch/xz-utils</pre>
 
     <h3 id="requirements-macos">Mac OS X</h3>
 
@@ -770,8 +782,9 @@ USE_OSGPLUGIN(&lt;plugin2&gt;)
     <pre>zypper install -R \
     autoconf automake bash bison bzip2 cmake flex gcc-c++ \
     gettext-tools git gperf intltool libffi-devel libtool \
-    make openssl libopenssl-devel patch perl perl-XML-Parser \
-    pkg-config python ruby scons sed unzip wget xz</pre>
+    make openssl libopenssl-devel p7zip patch perl \
+    perl-XML-Parser pkg-config python ruby scons sed unzip \
+    wget xz</pre>
 
     <p>
     On 64-bit openSUSE, install also:
@@ -1092,6 +1105,10 @@ local-pkg-list: $(LOCAL_PKG_LIST)</pre>
     <tr>
         <td class="package">boost</td>
         <td class="website"><a href="http://www.boost.org/">Boost C++ Library</a></td>
+    </tr>
+    <tr>
+        <td class="package">box2d</td>
+        <td class="website"><a href="http://www.box2d.org/">Box2D</a></td>
     </tr>
     <tr>
         <td class="package">bullet</td>
@@ -1459,6 +1476,10 @@ local-pkg-list: $(LOCAL_PKG_LIST)</pre>
     <tr>
         <td class="package">itk</td>
         <td class="website"><a href="http://www.itk.org/">Insight Segmentation and Registration Toolkit (ITK)</a></td>
+    </tr>
+    <tr>
+        <td class="package">jack</td>
+        <td class="website"><a href="http://jackaudio.org/">JACK Audio Connection Kit</a></td>
     </tr>
     <tr>
         <td class="package">jansson</td>
@@ -2101,6 +2122,10 @@ local-pkg-list: $(LOCAL_PKG_LIST)</pre>
         <td class="website"><a href="http://fallabs.com/qdbm/">QDBM</a></td>
     </tr>
     <tr>
+        <td class="package">qhttpengine</td>
+        <td class="website"><a href="https://github.com/nitroshare/qhttpengine">qhttpengine</a></td>
+    </tr>
+    <tr>
         <td class="package">qjson</td>
         <td class="website"><a href="http://qjson.sourceforge.net/">QJson</a></td>
     </tr>
@@ -2247,6 +2272,10 @@ local-pkg-list: $(LOCAL_PKG_LIST)</pre>
     <tr>
         <td class="package">rubberband</td>
         <td class="website"><a href="http://breakfastquay.com/rubberband/">Rubberband</a></td>
+    </tr>
+    <tr>
+        <td class="package">rucksack</td>
+        <td class="website"><a href="https://github.com/andrewrk/rucksack">rucksack</a></td>
     </tr>
     <tr>
         <td class="package">sdl</td>
@@ -2540,6 +2569,25 @@ local-pkg-list: $(LOCAL_PKG_LIST)</pre>
                 })();
             }
         }
+        function loadVersionCache(doneCallback, errCallback) {
+            var request = new XMLHttpRequest();
+            request.open('GET', 'versions.json', true);
+            request.onreadystatechange = function reqCallback() {
+                if (request.readyState === 4) {
+                    if (request.status === 200) {
+                        try {
+                            var versions = JSON.parse(request.responseText);
+                            doneCallback(versions);
+                        } catch (e) {
+                            errCallback();
+                        }
+                    } else {
+                        errCallback();
+                    }
+                }
+            }
+            request.send();
+        }
         function resolveVersions(versions) {
             var resolvedVersions = {};
             for (var package in versions) {
@@ -2557,16 +2605,27 @@ local-pkg-list: $(LOCAL_PKG_LIST)</pre>
             for (package in packageElements) {
                 var element = packageElements[package];
                 var version = resolvedVersions[package];
+                var shorten = version.length > 12;
+                if (shorten) {
+                    version = version.substring(0, 12);
+                }
                 var versionEscaped = version.replace('&', '&amp;').replace('<', '&lt;').replace('>', '&gt;');
+                if (shorten) {
+                    versionEscaped += '&hellip;';
+                }
                 var versionHtml = '<td class="version">' + versionEscaped + '</td>';
                 element.insertAdjacentHTML('afterend', versionHtml);
             }
         }
         (function main() {
             var packageElements = getPackageElements();
-            loadVersions(packageElements, function doneCallback(versions) {
-                var resolvedVersions = resolveVersions(versions);
-                showVersions(packageElements, resolvedVersions);
+            loadVersionCache(function doneCallback(versions) {
+                showVersions(packageElements, versions);
+            }, function errCallback() {
+                loadVersions(packageElements, function doneCallback(versions) {
+                    var resolvedVersions = resolveVersions(versions);
+                    showVersions(packageElements, resolvedVersions);
+                });
             });
         })();
     </script>
@@ -3919,56 +3978,56 @@ endef</pre>
 
     <ul>
     <li>
-        <a href="https://aur.archlinux.org/packages/mingw-w64-crt">Arch Linux mingw-w64 packages</a>
+        <a href="https://www.archlinux.org/groups/x86_64/mingw-w64/">Arch Linux mingw-w64 packages</a>
         <br>
-        win32 cross compiling packages by Arch Linux
+        Win32 cross compiling packages by Arch Linux
     </li>
     <li>
         <a href="http://packages.debian.org/stable/devel/mingw32">Debian mingw32 package</a>
         <br>
-        bare win32 cross compiler
+        Bare win32 cross compiler
     </li>
     <li>
-        <a href="https://admin.fedoraproject.org/pkgdb/acls/list/**mingw**">Fedora MinGW packages</a>
+        <a href="https://admin.fedoraproject.org/pkgdb/packages/mingw*/">Fedora MinGW packages</a>
         <br>
-        win32 cross compiling packages by Fedora
+        Win32 cross compiling packages by Fedora
     </li>
     <li>
         <a href="https://msys2.github.io/">MSYS2</a>
         <br>
-        win32/64 ports of many free software packages
+        Win32/64 ports of many free software packages
     </li>
     <li>
         <a href="http://gnuwin32.sourceforge.net/">GnuWin32</a>
         <br>
-        win32 ports of many free software packages
+        Win32 ports of many free software packages
     </li>
     <li>
         <a href="http://www.sandroid.org/imcross/">IMCROSS</a>
         <br>
-        another project with similar goal
+        Another project with similar goal
     </li>
     <li>
         <a href="http://www.libsdl.org/extras/win32/cross/README.txt">MinGW cross-compiler build script</a>
         <br>
-        old script provided by the
+        Old script provided by the
         <a href="http://www.libsdl.org/">SDL project</a>
     </li>
     <li>
         <a href="http://comments.gmane.org/gmane.comp.gnu.octave.maintainers/30358">mxe-octave</a>
         <br>
-        fork of MXE specialized on building
+        Fork of MXE specialized on building
         <a href="https://www.gnu.org/software/octave/">GNU Octave</a>
     </li>
     <li>
-        <a href="http://download.opensuse.org/repositories/windows:/mingw:/win32/SLE_11/noarch/">openSUSE MinGW packages</a>
+        <a href="https://software.opensuse.org/search?q=mingw&baseproject=openSUSE%3A13.2&search_devel=false&search_unsupported=false">openSUSE MinGW packages</a>
         <br>
-        win32 cross compiling packages by openSUSE
+        Win32 cross compiling packages by openSUSE
     </li>
     <li>
         <a href="http://win-builds.org/">Win-builds</a>
         <br>
-        creates binary packages, runs on both Linux and Windows
+        Creates binary packages, runs on both Linux and Windows
     </li>
     </ul>
 
@@ -3978,7 +4037,7 @@ endef</pre>
     <li>
         <a href="http://thebeezspeaks.blogspot.com/2009/04/cross-compilers-new-wave.html">Cross compilers, the new wave</a>
         <br>
-        appeared on
+        Appeared on
         <a href="http://lxer.com/module/newswire/view/118868">LXer</a>
         and
         <a href="http://www.linuxtoday.com/developer/2009041501335RVSWDV">Linux Today</a>
@@ -3986,18 +4045,18 @@ endef</pre>
     <li>
         <a href="http://wiki.njh.eu/Cross_Compiling_for_Win32">Cross Compiling for Win32</a>
         <br>
-        overview of win32 cross compiling
+        Overview of win32 cross compiling
     </li>
     <li>
         <a href="http://www.mingw.org/wiki/LinuxCrossMinGW">MinGW cross compiler for Linux build environment</a>
         <br>
-        official tutorial of the
+        Official tutorial of the
         <a href="">MinGW project</a>
     </li>
     <li>
         <a href="http://wiki.wxwidgets.org/Cross-Compiling_Under_Linux#Cross-compiling_under_Linux_for_MS_Windows">Cross-compiling under Linux for MS Windows</a>
         <br>
-        old tutorial provided by the
+        Old tutorial provided by the
         <a href="http://www.wxwidgets.org/">wxWidgets project</a>
     </li>
     </ul>
